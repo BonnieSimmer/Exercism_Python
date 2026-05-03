@@ -1,0 +1,19 @@
+"""
+This function shows the Collatz Conjecture, a puzzle that has baffled thinkers for decades.
+"""
+def steps(number):
+    """
+    Given a positive integer, this function returns the number of steps it takes to reach 1 
+    according to the rules of the Collatz Conjecture.
+    """
+    if number <= 0:
+        raise ValueError("Only positive integers are allowed")
+    counter = 0
+    while number != 1:
+        counter = counter + 1
+        if number % 2 == 0:
+            number = number / 2
+        else:
+            number = number * 3 + 1
+
+    return counter
